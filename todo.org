@@ -4,4 +4,6 @@
 * TODO add user review
 * TODO style it
 * TODO implement add and remove talks with time logic
+* TODO upload database to mongo db
+* TODO upload site to server
 
