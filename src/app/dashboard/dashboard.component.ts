@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, ViewChild, OnInit } from '@angular/core';
 import { TalksService } from '../talks.service';
 import { TalkSearchComponent } from '../talk-search/talk-search.component';
+import { SelectOptions } from './select-options';
 
 @Component({
     selector: 'app-dashboard',
@@ -11,13 +12,14 @@ export class DashboardComponent implements OnInit {
     unfilteredTalks: object[];
     talks: object[];
     speakers: string[];
-    selectOptions: object = {};
+    selectOptions: SelectOptions;
 
 
     constructor(private talksService: TalksService) { }
 
     ngOnInit() {
         this.getTalks();
+        this.selectOptions = new SelectOptions();
     }
 
     getTalks(): void {
@@ -26,15 +28,33 @@ export class DashboardComponent implements OnInit {
             // make a deep copy of result talks
             this.copyTalks();
             //this.talks = JSON.parse(JSON.stringify(this.unfilteredTalks));
-            this.filterBySpeakers();
+            //this.filterBySpeakers();
+            this.setUpSelectOptions();
+            console.log(this.selectOptions);
         });
     }
 
-    filterBySpeakers(): void {
-        //this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+    setUpSelectOptions(): void {
         this.selectOptions.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
-        console.log(this.selectOptions);
+        this.selectOptions.sessions = this.unfilteredTalks.map(talk => talk = talk.session);
+        this.selectOptions.tags = this.unfilteredTalks.map(talk => talk = talk.tags);
+        // remove duplicates from sessions and tags
+        this.selectOptions.sessions = [...new Set(this.selectOptions.sessions)];
+        this.selectOptions.tags = this.selectOptions.tags.reduce((a, b) => a.concat(b), []);
+        this.selectOptions.tags = [...new Set(this.selectOptions.tags)];
+        console.log(this.selectOptions.tags);
     }
+
+    // filterBySpeakers(): void {
+    //     //this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+    //     this.selectOptions.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+    //     console.log(this.selectOptions);
+    // }
+
+    // filterBySessions(): void {
+    //     //this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+    //     this.selectOptions.sessions = this.unfilteredTalks.map(talk => talk = talk.session);
+    // }
 
     copyTalks(): void {
         this.talks = JSON.parse(JSON.stringify(this.unfilteredTalks));
