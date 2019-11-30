@@ -3,7 +3,7 @@
     <mat-select placeholder="speaker" formControlName="speaker">
       <mat-option value="-- --">-- --</mat-option>
       <mat-option
-        *ngFor="let speaker of selectOption.speakers"
+        *ngFor="let speaker of selectOptions.speakers"
         value="{{ speaker }}"
         >{{ speaker }}</mat-option
       >
