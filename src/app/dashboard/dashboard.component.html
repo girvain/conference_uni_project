@@ -1,0 +1,10 @@
+<button mat-raised-button (click)="filterTalks()">filter</button>
+<div class="search-area">
+  <app-talk-search
+    [speakers]="speakers"
+    (talksChange)="onTalksChange($event)"
+  ></app-talk-search>
+</div>
+<div>
+  <app-display-talks [talks]="talks"></app-display-talks>
+</div>

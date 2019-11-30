@@ -1,0 +1,28 @@
+<h2>Talks</h2>
+
+<div class="speaker" id="{{ talks.id }}" *ngFor="let talk of talks">
+  <ul>
+    <li>
+      {{ talk.speaker }}
+    </li>
+    <li>
+      {{ talk.title }}
+    </li>
+    <li>
+      {{ talk.description }}
+    </li>
+    <li>
+      {{ talk.session }}
+    </li>
+    <li>
+      {{ talk.time }}
+    </li>
+    <li>
+      {{ talk.tags }}
+    </li>
+    <li>
+      <!-- add an if to this for Not yet rated -->
+      {{ talk.ratings }}
+    </li>
+  </ul>
+</div>
