@@ -12,7 +12,6 @@ export class DashboardComponent implements OnInit {
     talks: object[];
     speakers: string[];
     selectOptions: object = {};
-    @ViewChild(TalkSearchComponent, { static: false }) talkSearch: TalkSearchComponent;
 
 
     constructor(private talksService: TalksService) { }
