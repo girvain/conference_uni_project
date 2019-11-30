@@ -11,6 +11,7 @@ export class DashboardComponent implements OnInit {
   unfilteredTalks: object[];
      talks: object[];
     speakers: string[];
+    selectOptions: object = {speakers: []};
     @ViewChild(TalkSearchComponent, {static: false}) talkSearch: TalkSearchComponent;
 
 
@@ -36,7 +37,9 @@ export class DashboardComponent implements OnInit {
         this.talks.map(talk => {talk.speaker = 'Gavin Ross'});
   }
     filterBySpeakers(): void {
-        this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+        //this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+        this.selectOptions.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
+        console.log(this.selectOptions);
     }
 
     copyTalks(): void {
@@ -44,18 +47,17 @@ export class DashboardComponent implements OnInit {
     }
 
 
+
     onTalksChange(formInput: any): void {
         this.copyTalks();
-        if (formInput.speaker !== '') {
+        if (formInput.speaker !== '' && formInput.speaker !== '-- --') {
             this.talks = this.talks.filter(talk => talk.speaker === formInput.speaker)
         }
-        if (formInput.session !== '' || formInput.session !== '-- --') {
+        if (formInput.session !== '' && formInput.session !== '-- --') {
             this.talks = this.talks.filter(talk => talk.session === formInput.session)
         }
-        if (formInput.tag !== '') {
+        if (formInput.tag !== '' && formInput.tag !== '-- --') {
             this.talks = this.talks.filter(talk => talk.tags.includes(formInput.tag));
         }
-        //this.talks = localCopyOfTalks;
-        console.log(formInput.session);
     }
 }

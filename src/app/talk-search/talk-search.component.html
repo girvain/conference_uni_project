@@ -1,9 +1,12 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
   <mat-form-field>
     <mat-select placeholder="speaker" formControlName="speaker">
-      <mat-option *ngFor="let speaker of speakers" value="{{ speaker }}">{{
-        speaker
-      }}</mat-option>
+      <mat-option value="-- --">-- --</mat-option>
+      <mat-option
+        *ngFor="let speaker of selectOption.speakers"
+        value="{{ speaker }}"
+        >{{ speaker }}</mat-option
+      >
     </mat-select>
   </mat-form-field>
   <mat-form-field>

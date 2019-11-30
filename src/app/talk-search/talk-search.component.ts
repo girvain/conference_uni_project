@@ -16,6 +16,7 @@ export class TalkSearchComponent implements OnInit {
     @Output() talksChange: EventEmitter<any>;
     @Input() talks;
     @Input() speakers: string[];
+    @Input() selectOptions: Object;
     sessions: string[];
     tags: string[];
 
