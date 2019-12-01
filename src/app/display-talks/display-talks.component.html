@@ -1,28 +1,49 @@
 <h2>Talks</h2>
-
-<div class="speaker" id="{{ talks.id }}" *ngFor="let talk of talks">
-  <ul>
-    <li>
-      {{ talk.speaker }}
-    </li>
-    <li>
-      {{ talk.title }}
-    </li>
-    <li>
-      {{ talk.description }}
-    </li>
-    <li>
-      {{ talk.session }}
-    </li>
-    <li>
-      {{ talk.time }}
-    </li>
-    <li>
-      {{ talk.tags }}
-    </li>
-    <li>
-      <!-- add an if to this for Not yet rated -->
-      {{ talk.ratings }}
-    </li>
-  </ul>
+<div class="ui grid  stackable container">
+  <div class="two column row">
+    <div class="column ui card" *ngFor="let talk of talks">
+      <div class="content">
+        <a class="header">{{ talk.title }}</a>
+        <div class="meta">
+          {{ talk.speaker }}
+        </div>
+        <div class="description">
+          {{ talk.description }}
+        </div>
+      </div>
+      <div class="extra content">
+        <div>
+          <i class="tags icon"></i>
+          <span *ngFor="let t of talk.tags">
+            {{ t }}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+<!-- <div class="speaker" id="{{ talks.id }}" *ngFor="let talk of talks">
+     <ul>
+     <li>
+     {{ talk.speaker }}
+     </li>
+     <li>
+     {{ talk.title }}
+     </li>
+     <li>
+     {{ talk.description }}
+     </li>
+     <li>
+     {{ talk.session }}
+     </li>
+     <li>
+     {{ talk.time }}
+     </li>
+     <li>
+     {{ talk.tags }}
+     </li>
+     <li>
+     {{ talk.ratings }}
+     </li>
+     </ul>
+     </div> -->

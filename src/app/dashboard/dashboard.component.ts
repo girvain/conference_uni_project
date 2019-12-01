@@ -1,6 +1,5 @@
-import { Component, Input, Output, EventEmitter, ViewChild, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TalksService } from '../talks.service';
-import { TalkSearchComponent } from '../talk-search/talk-search.component';
 import { SelectOptions } from './select-options';
 
 @Component({
@@ -9,11 +8,9 @@ import { SelectOptions } from './select-options';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-    unfilteredTalks: object[];
-    talks: object[];
-    speakers: string[];
+    unfilteredTalks: any[];
+    talks: any[];
     selectOptions: SelectOptions;
-
 
     constructor(private talksService: TalksService) { }
 
@@ -27,10 +24,7 @@ export class DashboardComponent implements OnInit {
             this.unfilteredTalks = result;
             // make a deep copy of result talks
             this.copyTalks();
-            //this.talks = JSON.parse(JSON.stringify(this.unfilteredTalks));
-            //this.filterBySpeakers();
             this.setUpSelectOptions();
-            console.log(this.selectOptions);
         });
     }
 
@@ -45,22 +39,9 @@ export class DashboardComponent implements OnInit {
         console.log(this.selectOptions.tags);
     }
 
-    // filterBySpeakers(): void {
-    //     //this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
-    //     this.selectOptions.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
-    //     console.log(this.selectOptions);
-    // }
-
-    // filterBySessions(): void {
-    //     //this.speakers = this.unfilteredTalks.map(talk => talk = talk.speaker);
-    //     this.selectOptions.sessions = this.unfilteredTalks.map(talk => talk = talk.session);
-    // }
-
     copyTalks(): void {
         this.talks = JSON.parse(JSON.stringify(this.unfilteredTalks));
     }
-
-
 
     onTalksChange(formInput: any): void {
         this.copyTalks();

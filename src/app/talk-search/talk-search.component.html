@@ -1,15 +1,18 @@
-<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-select placeholder="speaker" formControlName="speaker">
-      <mat-option value="-- --">-- --</mat-option>
-      <mat-option
+<form class="ui form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+  <div class="field">
+    <label>Speaker</label>
+    <select formControlName="speaker" class="ui selection dropdown">
+      <option
         *ngFor="let speaker of selectOptions.speakers"
         value="{{ speaker }}"
-        >{{ speaker }}</mat-option
       >
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field>
+        {{ speaker }}
+      </option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Session</label>
     <mat-select placeholder="session" formControlName="session">
       <mat-option value="-- --">-- --</mat-option>
       <mat-option
@@ -18,16 +21,21 @@
         >{{ session }}</mat-option
       >
     </mat-select>
-  </mat-form-field>
-  <mat-form-field>
+  </div>
+  <div class="field">
+    <label>Session</label>
     <mat-select placeholder="tag" formControlName="tag">
       <mat-option value="-- --">-- --</mat-option>
       <mat-option *ngFor="let tag of selectOptions.tags" value="{{ tag }}">{{
         tag
       }}</mat-option>
     </mat-select>
-  </mat-form-field>
-  <button mat-raised-button type="submit" [disabled]="!searchForm.valid">
+  </div>
+  <button
+    class="ui primary button"
+    type="submit"
+    [disabled]="!searchForm.valid"
+  >
     Submit
   </button>
 </form>

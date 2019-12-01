@@ -2,8 +2,13 @@
 * TODO add router
 * TODO add login with router security
 * TODO add user review
+  - [ ] create function for average reviews
+  - [ ] create a toggle fot a not yet reviewed state of no reviews
 * TODO style it
+  - [ ] add a navbar
+  - [ ] add a loading animations
 * TODO implement add and remove talks with time logic
 * TODO upload database to mongo db
 * TODO upload site to server
+* DONE implement talks form with filtering 
 
