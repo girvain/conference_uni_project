@@ -32,7 +32,7 @@ export class TalkSearchComponent implements OnInit {
         console.log(this.talks);
     }
 
-    onSubmit() {
+    onSubmit(): void {
         this.talksChange.emit(this.searchForm.value);
         console.log(this.searchForm.value);
         console.log(this.talks);

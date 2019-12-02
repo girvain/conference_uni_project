@@ -1,23 +1,55 @@
-<h2>Talks</h2>
-<div class="ui grid  stackable container">
-  <div class="two column row">
-    <div class="column ui card" *ngFor="let talk of talks">
-      <div class="content">
-        <a class="header">{{ talk.title }}</a>
-        <div class="meta">
-          {{ talk.speaker }}
+<div class="ui container">
+  <div class="ui center aligned grid container">
+    <h1 class="ui center header">Talks</h1>
+  </div>
+  <div class="ui three column grid stackable">
+    <div class="column" *ngFor="let talk of talks">
+      <div class="ui fluid card">
+        <div class="content">
+          <a class="header">{{ talk.title }}</a>
+          <div class="meta">
+            {{ talk.speaker }}
+          </div>
+          <div class="description">
+            {{ talk.description }}
+          </div>
         </div>
-        <div class="description">
-          {{ talk.description }}
-        </div>
-      </div>
-      <div class="extra content">
-        <div>
-          <i class="tags icon"></i>
-          <span *ngFor="let t of talk.tags">
-            {{ t }}
+        <div class="content">
+          <span>
+            <i class="clock icon"></i>
+            {{ talk.time }}
+          </span>
+          <span class="floated right">
+            <span> - Session</span>
+            {{ talk.session }}
           </span>
         </div>
+        <div class="content">
+          <span>
+            Average Rating
+            <i class="star outline icon"></i>
+            <i class="star outline icon"></i>
+            <i class="star outline icon"></i>
+            <i class="star outline icon"></i>
+            <i class="star outline icon"></i>
+          </span>
+        </div>
+        <div class="extra content">
+          <div>
+            <i class="tags icon"></i>
+            <span *ngFor="let t of talk.tags">
+              {{ t }}
+            </span>
+          </div>
+        </div>
+        <button
+          (click)="addTalk($event)"
+          class="ui bottom attached primary button"
+          id="{{ talk.id }}"
+        >
+          <i class="add icon"></i>
+          Add Talk
+        </button>
       </div>
     </div>
   </div>

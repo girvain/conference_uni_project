@@ -1,35 +1,42 @@
 <form class="ui form" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-  <div class="field">
-    <label>Speaker</label>
-    <select formControlName="speaker" class="ui selection dropdown">
-      <option
-        *ngFor="let speaker of selectOptions.speakers"
-        value="{{ speaker }}"
-      >
-        {{ speaker }}
-      </option>
-    </select>
-  </div>
+  <div class="three fields">
+    <div class="field">
+      <label>Speaker</label>
+      <select formControlName="speaker" class="ui selection dropdown">
+        <option value="">Select Speaker</option>
+        <option value="-- --">-- --</option>
+        <option
+          *ngFor="let speaker of selectOptions.speakers"
+          value="{{ speaker }}"
+        >
+          {{ speaker }}
+        </option>
+      </select>
+    </div>
+    <div class="field">
+      <label>Session</label>
+      <select formControlName="session" class="ui selection dropdown">
+        <option value="">Select Session</option>
+        <option value="-- --">-- --</option>
+        <option
+          *ngFor="let session of selectOptions.sessions"
+          value="{{ session }}"
+        >
+          {{ session }}
+        </option>
+      </select>
+    </div>
 
-  <div class="field">
-    <label>Session</label>
-    <mat-select placeholder="session" formControlName="session">
-      <mat-option value="-- --">-- --</mat-option>
-      <mat-option
-        *ngFor="let session of selectOptions.sessions"
-        value="{{ session }}"
-        >{{ session }}</mat-option
-      >
-    </mat-select>
-  </div>
-  <div class="field">
-    <label>Session</label>
-    <mat-select placeholder="tag" formControlName="tag">
-      <mat-option value="-- --">-- --</mat-option>
-      <mat-option *ngFor="let tag of selectOptions.tags" value="{{ tag }}">{{
-        tag
-      }}</mat-option>
-    </mat-select>
+    <div class="field">
+      <label>Tags</label>
+      <select formControlName="tag" class="ui selection dropdown">
+        <option value="">Select Tag</option>
+        <option value="-- --">-- --</option>
+        <option *ngFor="let tag of selectOptions.tags" value="{{ tag }}">
+          {{ tag }}
+        </option>
+      </select>
+    </div>
   </div>
   <button
     class="ui primary button"

@@ -21,7 +21,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { TalkSearchComponent } from './talk-search/talk-search.component';
-import { DisplayTalksComponent } from './display-talks/display-talks.component'
+import { DisplayTalksComponent } from './display-talks/display-talks.component';
+import { RatingFormComponent } from './rating-form/rating-form.component';
+import { LoginComponent } from './login/login.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { DisplayTalksComponent } from './display-talks/display-talks.component'
     NavComponent,
     DashboardComponent,
     TalkSearchComponent,
-    DisplayTalksComponent
+    DisplayTalksComponent,
+    RatingFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
