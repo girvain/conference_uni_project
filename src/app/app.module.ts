@@ -23,7 +23,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { TalkSearchComponent } from './talk-search/talk-search.component';
 import { DisplayTalksComponent } from './display-talks/display-talks.component';
 import { RatingFormComponent } from './rating-form/rating-form.component';
-import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component';
+import {CookieModule} from 'ngx-cookie';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LoginComponent } from './login/login.component'
   ],
   imports: [
     BrowserModule,
+    CookieModule.forRoot(),
     AppRoutingModule,
       BrowserAnimationsModule,
       MatSliderModule,
