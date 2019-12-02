@@ -16,13 +16,14 @@ export class DisplayTalksComponent implements OnInit {
 
     addTalk(evt): void {
         let id = { talkId: evt.target.id };
-        //const id = evt.target.id;
-        let formData: FormData = new FormData();
-        formData.append('talkId', evt.target.id);
 
-        console.log(formData);
-        this.talksService.postTalk(formData)
+        console.log(id);
+        this.talksService.postTalk(id)
             .subscribe(arg => console.log(arg));
+    }
+
+    addRating(evt): void {
+        let id = { talkId: evt.target.id };
     }
 
 }

@@ -1,0 +1,23 @@
+<div class="ui container">
+  <form class="ui form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <label>Email</label>
+      <input
+        formControlName="email"
+        type="text"
+        name="first-name"
+        placeholder="Email"
+      />
+    </div>
+    <div class="field">
+      <label>Password</label>
+      <input
+        formControlName="password"
+        type="text"
+        name="last-name"
+        placeholder="Password"
+      />
+    </div>
+    <button class="ui button" type="submit">Submit</button>
+  </form>
+</div>

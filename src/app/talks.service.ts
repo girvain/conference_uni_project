@@ -19,11 +19,11 @@ export class TalksService {
   constructor(private http: HttpClient) { }
 
   getTalks(): Observable<any> {
-    return this.http.get<any>(this.talksUrl + '/talks/all');
+    return this.http.get<any>(this.talksUrl + '/talks');
   }
 
-    postRating(rating: any): Observable<any> {
-        return this.http.post<any>(this.talksUrl + '/talk/rating', rating, this.httpOptions);
+    postRating(rating: any, id: string): Observable<any> {
+        return this.http.post<any>(this.talksUrl + `/talks/rate/${id}`, rating, this.httpOptions);
     }
 
     postTalk(talk: any): Observable<any> {
