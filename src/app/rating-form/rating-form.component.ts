@@ -20,6 +20,17 @@ export class RatingFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  // TODO: change subscribe callback to find the local copy of the talk and change
+  // the rating to the new rating. Add an if display for your rating to the cards.
+  /**
+   * TODO: add an "attend talk?" button to each card and have a seperate route for
+   * the talks the user is planning to attend, along with time logic.
+   */
+  /**
+   * TODO: add a display my talks route to view the users talks along with an if
+   * statement to display something if they arent attending any talks. Also add a remove
+   * talk feature.
+   */
     onSubmit(): void {
       this.talksService.postRating(this.ratingForm.value, this.talkId)
           .subscribe(result => console.log(result));
