@@ -13,14 +13,6 @@ export class TalksService {
     withCredentials: true,
   };
 
-  // httpOptions = { headers: new HttpHeaders({
-  //     'Content-Type': '*',
-  //     'Access-Control-Allow-Credentials': 'true',
-  //     'Access-Control-Allow-Origin': '*',
-  //     'Access-Control-Allow-Methods': 'OPTIONS, GET, POST',
-  //     'Access-Control-Allow-Headers': 'Origin, Content-Type, Accept, Access-Control-Allow-Origin',
-  //   }), withCredentials: true, observe: 'response'};
-
   constructor(private http: HttpClient) { }
 
   getTalks(): Observable<any> {

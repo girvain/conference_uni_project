@@ -33,7 +33,11 @@ export class RatingFormComponent implements OnInit {
    */
     onSubmit(): void {
       this.talksService.postRating(this.ratingForm.value, this.talkId)
-          .subscribe(result => console.log(result));
+          .subscribe(result => {
+            console.log(this.talkId);
+            console.log(result);
+            console.log(this.ratingForm.value);
+          });
     }
 
     /** 1.have the id of the talk passed in with @Input from app-display-talks

@@ -1,5 +1,5 @@
 <form class="ui form" [formGroup]="ratingForm" (ngSubmit)="onSubmit()">
-  <div class="three fields">
+  <div class="fields">
     <div class="field">
       <select formControlName="rating" class="ui selection dropdown">
         <option value=""></option>
@@ -10,7 +10,7 @@
         <option value="5">5 Star</option>
       </select>
     </div>
-    <button class="ui primary button" type="submit">
+    <button class="ui button floating right" type="submit">
       Rate Talk
     </button>
   </div>
