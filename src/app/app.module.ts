@@ -26,6 +26,8 @@ import { RatingFormComponent } from './rating-form/rating-form.component';
 import { LoginComponent } from './login/login.component';
 import {CookieModule} from 'ngx-cookie';
 import { AverageRatingComponent } from './average-rating/average-rating.component';
+import { HeadingContentComponent } from './heading-content/heading-content.component';
+import { MyTalksComponent } from './my-talks/my-talks.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { AverageRatingComponent } from './average-rating/average-rating.componen
     DisplayTalksComponent,
     RatingFormComponent,
     LoginComponent,
-    AverageRatingComponent
+    AverageRatingComponent,
+    HeadingContentComponent,
+    MyTalksComponent
   ],
   imports: [
     BrowserModule,
