@@ -25,6 +25,7 @@ import { DisplayTalksComponent } from './display-talks/display-talks.component';
 import { RatingFormComponent } from './rating-form/rating-form.component';
 import { LoginComponent } from './login/login.component';
 import {CookieModule} from 'ngx-cookie';
+import { AverageRatingComponent } from './average-rating/average-rating.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {CookieModule} from 'ngx-cookie';
     TalkSearchComponent,
     DisplayTalksComponent,
     RatingFormComponent,
-    LoginComponent
+    LoginComponent,
+    AverageRatingComponent
   ],
   imports: [
     BrowserModule,

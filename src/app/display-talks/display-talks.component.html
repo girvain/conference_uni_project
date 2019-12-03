@@ -25,14 +25,7 @@
           </span>
         </div>
         <div class="content">
-          <span>
-            Average Rating
-            <i class="star outline icon"></i>
-            <i class="star outline icon"></i>
-            <i class="star outline icon"></i>
-            <i class="star outline icon"></i>
-            <i class="star outline icon"></i>
-          </span>
+          <app-average-rating [ratings]="talk.ratings"></app-average-rating>
           <div class="content">
             <app-rating-form [talkId]="talk.id" [talks]="talks"></app-rating-form>
           </div>

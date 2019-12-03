@@ -22,8 +22,5 @@ export class DisplayTalksComponent implements OnInit {
             .subscribe(arg => console.log(arg));
     }
 
-    addRating(evt): void {
-        let id = { talkId: evt.target.id };
-    }
 
 }
