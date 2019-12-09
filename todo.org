@@ -1,10 +1,12 @@
-* TODO MyTalks route with add and remove talks with time logic
-* TODO add login with router security
 * TODO register component
+* TODO add login with router security
+* TODO Time logic
 * TODO add user review
   - [X] create function for average reviews
   - [ ] add a not reviewed  state or add grey stars for missing ones
-  - [ ] ...or redirect to login when non member tries to rate talk
+  - [ ] redirect to login when non member tries to rate talk or...
+  - [ ] remove rating feature for non-logged in users
+* TODO add a display of the sessions to the dashboard
 * TODO sort the rate talk button overflow
 * TODO prevent empty ratings from form
 * TODO styling
@@ -14,7 +16,7 @@
         dropdown menus.
 * TODO add on change listener to the search form to replace submit button
 ** switch the session display to the place not the letters?
-* TODO add a display of the sessions
+* DONE MyTalks route with add and remove talks
 * DONE add router
 * DONE implement talks form with filtering 
 * TODO finished product tasks

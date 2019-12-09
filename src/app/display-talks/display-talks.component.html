@@ -1,17 +1,16 @@
 <div class="ui container">
-
   <div class="ui center aligned grid container">
     <h1 class="ui center header">Talks</h1>
   </div>
   <div class="ui three column grid stackable">
     <div class="column" *ngFor="let talk of talks">
-      <div *ngIf="talk == true || talk != '' "  class="ui fluid card">
+      <div *ngIf="talk == true || talk != ''" class="ui fluid card">
         <div class="content">
           <a class="header">{{ talk.title }}</a>
           <div class="meta">
             {{ talk.speaker }}
           </div>
-          <div class="description">
+          <div class="description talk-description">
             {{ talk.description }}
           </div>
         </div>
@@ -28,7 +27,10 @@
         <div *ngIf="talk.ratings" class="content">
           <app-average-rating [ratings]="talk.ratings"></app-average-rating>
           <div class="content">
-            <app-rating-form [talkId]="talk.id" [talks]="talks"></app-rating-form>
+            <app-rating-form
+              [talkId]="talk.id"
+              [talks]="talks"
+            ></app-rating-form>
           </div>
         </div>
         <div class="extra content">
@@ -39,7 +41,8 @@
             </span>
           </div>
         </div>
-        <button *ngIf="!isMyTalks"
+        <button
+          *ngIf="!isMyTalks"
           (click)="addTalk($event)"
           class="ui bottom attached primary button"
           id="{{ talk.id }}"
@@ -47,7 +50,8 @@
           <i class="add icon"></i>
           Add Talk
         </button>
-          <button *ngIf="isMyTalks"
+        <button
+          *ngIf="isMyTalks"
           (click)="removeTalk($event)"
           class="ui bottom attached red button"
           id="{{ talk.id }}"
