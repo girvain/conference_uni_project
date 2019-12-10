@@ -17,8 +17,13 @@
       My Talks
     </a>
     <div class="right menu">
-      <a class="ui item" [class.active]="isMyTalksActive">
-        Logout
+      <a class="ui item" (click)="logout()">
+        <p *ngIf="!authService.isLoggedIn">
+          Login
+        </p>
+        <p *ngIf="authService.isLoggedIn">
+          Logout
+        </p>
       </a>
     </div>
   </div>

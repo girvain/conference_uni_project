@@ -2,7 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import {MatToolbar} from '@angular/material';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -21,7 +22,10 @@ export class NavComponent implements OnInit {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+    constructor(private breakpointObserver: BreakpointObserver,
+                private authService: AuthService,
+                private router: Router
+               ) {}
 
     ngOnInit() {
         this.setRouteSelect();
@@ -35,6 +39,22 @@ export class NavComponent implements OnInit {
             this.isMyTalksActive = 'active';
         }
     }
+
+    logout(): void {
+        this.authService.logout().subscribe(() => {
+            console.log('logout');
+            //if (this.authService.isLoggedIn) {
+                // Get the redirect URL from our auth service
+                // If no redirect has been set, use the default
+                let redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/login';
+
+                // Redirect the user
+                this.router.navigateByUrl(redirect);
+            //}
+        });
+    }
+
+
 
 }
 

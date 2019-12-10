@@ -1,21 +1,22 @@
+* TODO add form logic on client
+  - use angular input checks and display server errors
 * TODO register component
-* TODO add login with router security
+* DONE add login with router security
 * TODO Time logic
 * TODO add user review
   - [X] create function for average reviews
   - [ ] add a not reviewed  state or add grey stars for missing ones
   - [ ] redirect to login when non member tries to rate talk or...
   - [ ] remove rating feature for non-logged in users
-* TODO add a display of the sessions to the dashboard
+* TODO add a display of the sessions A, B and C to the dashboard
 * TODO sort the rate talk button overflow
 * TODO prevent empty ratings from form
-* TODO styling
-  - [ ] add a navbar
+* styling
+  - [X] add a navbar
   - [ ] add a loading animations
   - [ ] set up an onChange listener to run the jquery scripts for the card
         dropdown menus.
 * TODO add on change listener to the search form to replace submit button
-** switch the session display to the place not the letters?
 * DONE MyTalks route with add and remove talks
 * DONE add router
 * DONE implement talks form with filtering 

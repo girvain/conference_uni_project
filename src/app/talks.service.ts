@@ -39,5 +39,9 @@ export class TalksService {
         console.log(credentials);
         return this.http.post<any>(this.talksUrl + '/users/login', credentials, this.httpOptions);
     }
+
+    logout(): Observable<any> {
+        return this.http.get<any>(this.talksUrl + '/users/logout', this.httpOptions);
+    }
 }
 

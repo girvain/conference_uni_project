@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminModule } from './admin/admin.module';
 
 import { MatSliderModule } from '@angular/material/slider';
 import { NavComponent } from './nav/nav.component';
@@ -62,6 +63,7 @@ import { LoginContainerComponent } from './login-container/login-container.compo
       MatSelectModule,
       ReactiveFormsModule,
     HttpClientModule,
+      AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
