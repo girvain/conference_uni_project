@@ -28,6 +28,7 @@ import {CookieModule} from 'ngx-cookie';
 import { AverageRatingComponent } from './average-rating/average-rating.component';
 import { HeadingContentComponent } from './heading-content/heading-content.component';
 import { MyTalksComponent } from './my-talks/my-talks.component';
+import { LoginContainerComponent } from './login-container/login-container.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MyTalksComponent } from './my-talks/my-talks.component';
     LoginComponent,
     AverageRatingComponent,
     HeadingContentComponent,
-    MyTalksComponent
+    MyTalksComponent,
+    LoginContainerComponent
   ],
   imports: [
     BrowserModule,

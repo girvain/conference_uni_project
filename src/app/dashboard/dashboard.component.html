@@ -1,11 +1,14 @@
+<app-nav [activeRoute]="'dash'"></app-nav>
+<app-heading-content></app-heading-content>
 <div class="ui container">
-    <div class="container">
-      <!--<div class="ui header">Hello</div>-->
-      <p>Welcome to the website for Web Dev Con 2020. Below is a listing of all the talks that
-        will be taking place for the event. Please select an option from the options
-        below to filter the talks by your interests.
-      </p>
-    </div>
+  <div class="container">
+    <!--<div class="ui header">Hello</div>-->
+    <p>
+      Welcome to the website for Web Dev Con 2020. Below is a listing of all the
+      talks that will be taking place for the event. Please select an option
+      from the options below to filter the talks by your interests.
+    </p>
+  </div>
   <app-talk-search
     [selectOptions]="selectOptions"
     (talksChange)="onTalksChange($event)"
