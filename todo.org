@@ -1,17 +1,19 @@
-* TODO add form logic on client
-  - use angular input checks and display server errors
-* TODO register component
-* DONE add login with router security
+* TODO register component form logic
+* TODO login component form logic
+* TODO rating component form logic
+  - make sure no nulls can be sent to the server
+
+* TODO a way to pass messages to the login from buttons and Mytalks nav
+
 * TODO Time logic
 * TODO add user review
   - [X] create function for average reviews
-  - [ ] add a not reviewed  state or add grey stars for missing ones
+  - [X] add a not reviewed  state or add grey stars for missing ones
   - [ ] redirect to login when non member tries to rate talk or...
   - [ ] remove rating feature for non-logged in users
 * TODO add a display of the sessions A, B and C to the dashboard
 * TODO sort the rate talk button overflow
-* TODO prevent empty ratings from form
-* styling
+* TODO styling
   - [X] add a navbar
   - [ ] add a loading animations
   - [ ] set up an onChange listener to run the jquery scripts for the card
@@ -20,6 +22,7 @@
 * DONE MyTalks route with add and remove talks
 * DONE add router
 * DONE implement talks form with filtering 
+* DONE add login with router security
 * TODO finished product tasks
 ** TODO upload database to mongo db
 ** TODO upload site to server

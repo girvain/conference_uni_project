@@ -4,7 +4,7 @@
       <h2 class="ui image header">
         <!-- <img src="assets/images/logo.png" class="image" /> -->
         <div class="content">
-          Log-in to your account
+          Register for the conference?
         </div>
       </h2>
       <form
@@ -13,6 +13,17 @@
         (ngSubmit)="onSubmit()"
       >
         <div class="ui stacked segment">
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="user icon"></i>
+              <input
+                formControlName="name"
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
+            </div>
+          </div>
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i>
@@ -35,16 +46,25 @@
               />
             </div>
           </div>
+          <div class="field">
+            <div class="ui left icon input">
+              <i class="lock icon"></i>
+              <input
+                formControlName="password2"
+                type="password"
+                name="password2"
+                placeholder="Type password again"
+              />
+            </div>
+          </div>
           <button class="ui fluid primary submit button" type="submit">
-            Login
+            Register
           </button>
           <div class="six wide"></div>
         </div>
 
         <div class="ui error message"></div>
       </form>
-
-      <div class="ui message">New to us? <a href="#">Sign Up</a></div>
     </div>
   </div>
 </div>

@@ -40,6 +40,10 @@ export class TalksService {
         return this.http.post<any>(this.talksUrl + '/users/login', credentials, this.httpOptions);
     }
 
+    register(credentials: any): Observable<any> {
+        return this.http.post<any>(this.talksUrl + '/users/register', credentials, this.httpOptions);
+    }
+
     logout(): Observable<any> {
         return this.http.get<any>(this.talksUrl + '/users/logout', this.httpOptions);
     }

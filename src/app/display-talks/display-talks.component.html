@@ -4,7 +4,10 @@
   </div>
   <div class="ui three column grid stackable">
     <div class="column" *ngFor="let talk of talks">
-      <div *ngIf="talk == true || talk != ''" class="ui fluid card">
+      <div
+        *ngIf="talk == true || talk != '' || talk != null"
+        class="ui fluid card"
+      >
         <div class="content">
           <a class="header">{{ talk.title }}</a>
           <div class="meta">
@@ -63,28 +66,3 @@
     </div>
   </div>
 </div>
-<!-- <div class="speaker" id="{{ talks.id }}" *ngFor="let talk of talks">
-     <ul>
-     <li>
-     {{ talk.speaker }}
-     </li>
-     <li>
-     {{ talk.title }}
-     </li>
-     <li>
-     {{ talk.description }}
-     </li>
-     <li>
-     {{ talk.session }}
-     </li>
-     <li>
-     {{ talk.time }}
-     </li>
-     <li>
-     {{ talk.tags }}
-     </li>
-     <li>
-     {{ talk.ratings }}
-     </li>
-     </ul>
-     </div> -->

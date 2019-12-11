@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginContainerComponent } from './login-container/login-container.component';
 import {MyTalksComponent} from './my-talks/my-talks.component';
 import { AuthGuard } from './auth/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
       component: MyTalksComponent,
       canActivate: [AuthGuard],
     },
+    { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({

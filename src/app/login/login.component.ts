@@ -52,19 +52,5 @@ export class LoginComponent implements OnInit {
         });
     }
 
-    logout(): void {
-        this.authService.login(this.loginForm.value).subscribe(() => {
-
-            if (this.authService.isLoggedIn) {
-                // Get the redirect URL from our auth service
-                // If no redirect has been set, use the default
-                let redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/dashboard';
-
-                // Redirect the user
-                this.router.navigateByUrl(redirect);
-            }
-        });
-    }
-
 
 }

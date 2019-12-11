@@ -30,6 +30,7 @@ import { AverageRatingComponent } from './average-rating/average-rating.componen
 import { HeadingContentComponent } from './heading-content/heading-content.component';
 import { MyTalksComponent } from './my-talks/my-talks.component';
 import { LoginContainerComponent } from './login-container/login-container.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LoginContainerComponent } from './login-container/login-container.compo
     AverageRatingComponent,
     HeadingContentComponent,
     MyTalksComponent,
-    LoginContainerComponent
+    LoginContainerComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
