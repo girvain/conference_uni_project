@@ -46,9 +46,8 @@ export class DisplayTalksComponent implements OnInit {
       .subscribe(myTalks => {
         const id = evt.target.id;
         let talkId = {talkId: evt.target.id}; // this is a wrapper for sending the http request
-        //console.log(id);
         let talkToBeAdded = this.talks.find(talk => talk.id === id);
-
+        console.log(talkToBeAdded);
         for (let i = 0; i < myTalks.length; i++) {
           console.log('talkToBeAdded' + talkToBeAdded.startTime);
           console.log('myTalks' + myTalks[i].startTime);
