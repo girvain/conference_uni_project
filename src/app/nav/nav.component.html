@@ -8,7 +8,7 @@
     >
       Dash
     </a>
-    <a
+    <a *ngIf="authService.isLoggedIn"
       class="item"
       [class.active]="isMyTalksActive"
       id="mytalks"
@@ -16,6 +16,12 @@
     >
       My Talks
     </a>
+    <a *ngIf="!authService.isLoggedIn"
+      class="item"
+      [class.active]="isMyTalksActive"
+      id="mytalks"
+      routerLink="/login/500"
+    > My Talks </a>
     <div class="right menu">
       <a class="ui item" (click)="logout()">
         <p *ngIf="!authService.isLoggedIn">

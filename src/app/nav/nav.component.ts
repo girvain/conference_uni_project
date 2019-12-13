@@ -44,7 +44,7 @@ export class NavComponent implements OnInit {
         this.authService.logout().subscribe(() => {
             console.log('logout');
             this.router.navigate(['/login']);
-            
+
             // //if (this.authService.isLoggedIn) {
             //     // Get the redirect URL from our auth service
             //     // If no redirect has been set, use the default

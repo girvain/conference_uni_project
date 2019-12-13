@@ -1,26 +1,18 @@
 * TODO add a null filter to the getTalks service 
+  - remove nulls from the results of getMyTalks to untimately stop error on client
+  - check for errors before submiting the postTalk (talksService) or addTalk (displayTalksComponent)
 * TODO register component form logic
 * TODO login component form logic
-* TODO rating component form logic
+* DONE rating component form logic
   - make sure no nulls can be sent to the server
 
-* TODO a way to pass messages to the login form buttons and Mytalks nav
-
-* TODO Time logic
-  - add a string format of a date and time for a startTime and endTime
-    on the server so date objects can be created easily clientside.
-  - algorithm for adding talks to myTalks
-    1) user talksService to get the users talks
-    2) go through each user talk and check:
-
-       start time of new talk > end time of user talk
-            or
-       new talks end time > start time of user talk
+* TODO Test ratings with more than one rating in the json data
 
 * TODO add error handlers to all http requests
 * TODO make add talk buttons unclickable after being added to my talks
   - do this on the server adding a clicked state variable to the model
-* TODO redirect to login when non member tries to rate talk
+* TODO make rate talk buttons disabled after user has reviewed a talk
+* DONE redirect to login when non member tries to rate talk
   do this with checking if they are logged in and useing the redirect
   and passing parameters on the query
 * TODO add a display of the sessions A, B and C to the dashboard
@@ -34,6 +26,17 @@
   - [ ] set up an onChange listener to run the jquery scripts for the card
         dropdown menus.
 * TODO add on change listener to the search form to replace submit button
+* DONE Time logic
+  - add a string format of a date and time for a startTime and endTime
+    on the server so date objects can be created easily clientside.
+  - algorithm for adding talks to myTalks
+    1) user talksService to get the users talks
+    2) go through each user talk and check:
+
+       start time of new talk > end time of user talk
+            or
+       new talks end time > start time of user talk
+
 * DONE add user review
   - [X] create function for average reviews
   - [X] add a not reviewed  state or add grey stars for missing ones

@@ -7,6 +7,12 @@
           Log-in to your account
         </div>
       </h2>
+
+      <div class="ui error message" *ngIf="errorMsg == 500">
+        <div class="header">Action Forbidden</div>
+        <p>You must be a registered and logged in user to access this feature. Please Login or click the sign up to register.</p>
+      </div>
+
       <form
         class="ui large form"
         [formGroup]="loginForm"
@@ -44,7 +50,7 @@
         <div class="ui error message"></div>
       </form>
 
-      <div class="ui message">New to us? <a href="#">Sign Up</a></div>
+      <div class="ui message">Not Registered? <a routerLink="/register">Sign Up</a></div>
     </div>
   </div>
 </div>

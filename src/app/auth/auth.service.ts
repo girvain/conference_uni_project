@@ -8,7 +8,7 @@ import { TalksService } from '../talks.service';
   providedIn: 'root',
 })
 export class AuthService {
-  isLoggedIn = false;
+  isLoggedIn = true; // set this to true to be always logged in when in dev mode
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;

@@ -11,6 +11,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'login', component: LoginContainerComponent },
+  { path: 'login/:id', component: LoginContainerComponent },
     { path: 'mytalks',
       component: MyTalksComponent,
       canActivate: [AuthGuard],

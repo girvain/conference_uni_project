@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { TalksService } from '../talks.service';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { LoginModel } from './login-model';
 import { AuthService } from '../auth/auth.service';
 
@@ -15,15 +15,25 @@ export class LoginComponent implements OnInit {
         email: new FormControl(''),
         password: new FormControl(''),
     });
+  private errorMsg: string;
 
 
     constructor(
         private talksService: TalksService,
         private router: Router,
-        private authService: AuthService
+        private authService: AuthService,
+        private route: ActivatedRoute,
     ) { }
 
     ngOnInit() {
+      this.getMessageParams();
+    }
+
+    getMessageParams(): void {
+      this.route.params.subscribe(params => {
+         console.log(params.id);
+         this.errorMsg = params.id;
+      });
     }
 
     // onSubmit(): void {

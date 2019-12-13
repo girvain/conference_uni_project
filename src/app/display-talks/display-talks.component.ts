@@ -34,13 +34,14 @@ export class DisplayTalksComponent implements OnInit {
           });
 
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login/500']);
     }
 
   }
 
 
   checkForTimeClash(evt): boolean {
+    if (this.authService.isLoggedIn) {
     this.talksService.getMyTalks()
       .subscribe(myTalks => {
         const id = evt.target.id;
@@ -53,13 +54,18 @@ export class DisplayTalksComponent implements OnInit {
           console.log('myTalks' + myTalks[i].startTime);
           if (talkToBeAdded.id === myTalks[i].id) {
             console.log('talk is already in myTalks');
+            // add a warning msg to the talk object that can't be added so it can inform client
+            talkToBeAdded.warningMsg = 'This talk is already in My Talks';
             return false;
           }
           else if (talkToBeAdded.startTime === myTalks[i].startTime) {
             console.log('CLASH');
+            talkToBeAdded.warningMsg = `This talk clashes with the talk from your My Talks called: \n"${myTalks[i].title}"
+            \n Please remove it from My Talks to add this current talk`;
             return true;
           }
         }
+        // possibly add null check here
         this.addTalk(evt);
       });
 
@@ -85,6 +91,10 @@ export class DisplayTalksComponent implements OnInit {
     //       }
     //     }
     //   });
+
+    } else {
+      this.router.navigate(['/login/500']);
+    }
   }
 
   addTalkWithTalk(talk): void {
@@ -96,7 +106,7 @@ export class DisplayTalksComponent implements OnInit {
           console.log(arg);
         });
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login/500']);
     }
 
   }

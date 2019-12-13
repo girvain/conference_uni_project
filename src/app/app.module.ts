@@ -32,6 +32,7 @@ import { HeadingContentComponent } from './heading-content/heading-content.compo
 import { MyTalksComponent } from './my-talks/my-talks.component';
 import { LoginContainerComponent } from './login-container/login-container.component';
 import { RegisterComponent } from './register/register.component';
+import { WarningMsgComponent } from './warning-msg/warning-msg.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { RegisterComponent } from './register/register.component';
     HeadingContentComponent,
     MyTalksComponent,
     LoginContainerComponent,
-    RegisterComponent
+    RegisterComponent,
+    WarningMsgComponent,
   ],
   imports: [
     BrowserModule,

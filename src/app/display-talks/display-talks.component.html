@@ -44,6 +44,12 @@
             </span>
           </div>
         </div>
+        <div class="ui warning message" *ngIf="talk.warningMsg">
+          <div class="header">Could you check something!</div>
+          <ul class="list">
+            <li>{{talk.warningMsg}}</li>
+          </ul>
+        </div>
         <button
           *ngIf="!isMyTalks"
 

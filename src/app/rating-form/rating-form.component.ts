@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { TalksService } from '../talks.service';
 import { AuthService } from '../auth/auth.service';
 import { Router } from '@angular/router';
@@ -13,8 +13,12 @@ export class RatingFormComponent implements OnInit {
     @Input() talkId: string;
     @Input() talks: object[];
     ratingForm = new FormGroup({
-        rating: new FormControl(''),
+        rating: new FormControl('', [
+          Validators.required,
+          Validators.minLength(1),
+        ]),
     });
+  private isSubmited: boolean;
 
 
     constructor(
@@ -24,6 +28,7 @@ export class RatingFormComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+
     }
 
     // TODO: change subscribe callback to find the local copy of the talk and change
@@ -44,9 +49,10 @@ export class RatingFormComponent implements OnInit {
                     console.log(this.talkId);
                     console.log(result);
                     console.log(this.ratingForm.value);
+                    this.isSubmited = true;
                 });
         } else {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/login/500']);
         }
     }
 
