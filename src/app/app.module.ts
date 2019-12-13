@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
+import { FormGroup} from '@angular/forms';
 
 import { MatSliderModule } from '@angular/material/slider';
 import { NavComponent } from './nav/nav.component';
@@ -66,8 +67,10 @@ import { RegisterComponent } from './register/register.component';
       ReactiveFormsModule,
     HttpClientModule,
       AdminModule,
+    ReactiveFormsModule,
   ],
   providers: [],
+    exports: [ AverageRatingComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

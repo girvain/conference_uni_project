@@ -5,7 +5,7 @@
   <div class="ui three column grid stackable">
     <div class="column" *ngFor="let talk of talks">
       <div
-        *ngIf="talk == true || talk != '' || talk != null"
+        *ngIf="talk"
         class="ui fluid card"
       >
         <div class="content">
@@ -27,7 +27,7 @@
             {{ talk.session }}
           </span>
         </div>
-        <div *ngIf="talk.ratings" class="content">
+        <div class="content" *ngIf="talk.ratings">
           <app-average-rating [ratings]="talk.ratings"></app-average-rating>
           <div class="content">
             <app-rating-form
@@ -46,9 +46,10 @@
         </div>
         <button
           *ngIf="!isMyTalks"
-          (click)="addTalk($event)"
+
           class="ui bottom attached primary button"
           id="{{ talk.id }}"
+          (click)="checkForTimeClash($event)"
         >
           <i class="add icon"></i>
           Add Talk

@@ -1,8 +1,9 @@
-<div class="content" *ngIf="hasRating">
+<div class="content">
   Average Rating
+  <a class="ui grey small label" *ngIf="!hasRating">Unrated</a>
   <!--<div class="ui star rating" [attr.data-rating]="average"></div>-->
   <i class="star icon yellow" *ngFor="let star of stars"></i>
 </div>
-<div class="content" *ngIf="!hasRating">
-  <header>Unrated</header>
-</div>
+<!-- <div class="content" *ngIf="!hasRating">
+     <header>Unrated</header>
+     </div> -->
