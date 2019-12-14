@@ -1,6 +1,6 @@
-<form class="ui form" [formGroup]="ratingForm" (ngSubmit)="onSubmit()">
+<form class="ui fluid form" [formGroup]="ratingForm" (ngSubmit)="onSubmit()">
   <div class="fields" *ngIf="!isSubmited">
-    <div class="field">
+    <div class="field" id="star-select">
       <select formControlName="rating" class="ui selection dropdown" required>
         <!--<option value=""></option>-->
         <option value="1">1 Star</option>
@@ -13,8 +13,9 @@
     <div class="ui error message">
       <div class="header">A rating is required</div>
     </div>
-    <button class="ui button floating right" type="submit" [disabled]="!ratingForm.valid || isSubmited">
+
+  </div>
+        <button class="ui fluid button" type="submit" [disabled]="!ratingForm.valid || isSubmited">
       Rate Talk
     </button>
-  </div>
 </form>

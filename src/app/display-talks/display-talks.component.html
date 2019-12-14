@@ -1,3 +1,15 @@
+<div *ngIf="talks && talks.length < 1" class="ui center aligned grid container" id="empty-talk-container">
+        <div class="ui fluid centered card">
+        <div class="content">
+          <a class="header">Wow!</a>
+          <div class="description talk-description">
+            You currently have no talks in your account, jump back into the dashboard to add some.
+          </div>
+        </div>
+      </div>
+</div>
+
+
 <div class="ui container">
   <div class="ui center aligned grid container">
     <!--<h1 class="ui center header">Talks</h1>-->

@@ -1,7 +1,8 @@
-* TODO add a null filter to the getTalks service 
+* TODO Maybe take out the footer for my talks if it dosen't work well on a big screen
+* DONE add a null filter to the getTalks service 
   - remove nulls from the results of getMyTalks to untimately stop error on client
   - check for errors before submiting the postTalk (talksService) or addTalk (displayTalksComponent)
-* TODO Make footer better, clean up layout of h1's and make sessions have more space
+* DONE Make footer better, clean up layout of h1's and make sessions have more space
 * TODO Test ratings with more than one rating in the json data
 * TODO sort the rate talk button overflow
 * TODO add on change listener to the search form to replace submit button or Center it with CSS

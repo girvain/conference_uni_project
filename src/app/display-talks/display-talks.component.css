@@ -1,3 +1,9 @@
 /* .talk-description { */
 /*     min-height: 270px; */
 /* } */
+
+#empty-talk-container {
+  margin-top: 4em;
+  margin-bottom: 300px;
+}
+
