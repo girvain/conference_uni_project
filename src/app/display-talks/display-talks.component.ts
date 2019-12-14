@@ -45,12 +45,12 @@ export class DisplayTalksComponent implements OnInit {
     this.talksService.getMyTalks()
       .subscribe(myTalks => {
         const id = evt.target.id;
-        let talkId = {talkId: evt.target.id}; // this is a wrapper for sending the http request
+        // const talkId = {talkId: evt.target.id}; // this is a wrapper for sending the http request
         let talkToBeAdded = this.talks.find(talk => talk.id === id);
         console.log(talkToBeAdded);
         for (let i = 0; i < myTalks.length; i++) {
-          console.log('talkToBeAdded' + talkToBeAdded.startTime);
-          console.log('myTalks' + myTalks[i].startTime);
+          //console.log('talkToBeAdded' + talkToBeAdded.startTime);
+          //console.log('myTalks' + myTalks[i].startTime);
           if (talkToBeAdded.id === myTalks[i].id) {
             console.log('talk is already in myTalks');
             // add a warning msg to the talk object that can't be added so it can inform client
@@ -154,7 +154,7 @@ export class DisplayTalksComponent implements OnInit {
               )
             ) {
               if (talkId != null) {
-                this.addTalkWithTalk(talkId);
+                //this.addTalkWithTalk(talkId);
               }
               break;
               // console.log(talkToBeAddedStartTime.getTime());
