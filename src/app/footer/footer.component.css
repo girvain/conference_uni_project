@@ -1,0 +1,23 @@
+/*.ui.vertical.segment:last-child {*/
+  /*border-bottom: none;*/
+/*}*/
+/*.ui.inverted.segment, .ui.primary.inverted.segment {*/
+  /*background: #1B1C1D;*/
+  /*color: rgba(255, 255, 255, 0.9);*/
+/*}*/
+/*.ui.inverted.segment {*/
+  /*border: none;*/
+  /*-webkit-box-shadow: none;*/
+  /*box-shadow: none;*/
+/*}*/
+/*.footer.segment {*/
+  /*padding: 5em 0em;*/
+/*}*/
+
+/*.footer.segment {*/
+  /*margin-top: 4em;*/
+/*}*/
+
+.footer {
+  margin-top: 30em;
+}

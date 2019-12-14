@@ -40,7 +40,7 @@ export class DisplayTalksComponent implements OnInit {
   }
 
 
-  checkForTimeClash(evt): boolean {
+  checkForTimeClash(evt): void {
     if (this.authService.isLoggedIn) {
     this.talksService.getMyTalks()
       .subscribe(myTalks => {
@@ -95,21 +95,6 @@ export class DisplayTalksComponent implements OnInit {
       this.router.navigate(['/login/500']);
     }
   }
-
-  addTalkWithTalk(talk): void {
-    if (this.authService.isLoggedIn) {
-      //let id = { talkId: evt.target.id };
-      //console.log(id);
-      this.talksService.postTalk(talk)
-        .subscribe(arg => {
-          console.log(arg);
-        });
-    } else {
-      this.router.navigate(['/login/500']);
-    }
-
-  }
-
 
   checkTalkTimes(evt): void {
     if (this.authService.isLoggedIn) {

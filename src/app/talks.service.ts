@@ -19,6 +19,10 @@ export class TalksService {
     return this.http.get<any>(this.talksUrl + '/talks/all');
   }
 
+  getSessions(): Observable<any> {
+    return this.http.get<any>(this.talksUrl + '/sessions');
+  }
+
    getMyTalks(): Observable<any> {
     return this.http.post<any>(this.talksUrl + '/talks/user',{ }, this.httpOptions);
   }
@@ -41,6 +45,7 @@ export class TalksService {
     }
 
     register(credentials: any): Observable<any> {
+        console.log(credentials);
         return this.http.post<any>(this.talksUrl + '/users/register', credentials, this.httpOptions);
     }
 

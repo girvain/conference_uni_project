@@ -1,31 +1,31 @@
 * TODO add a null filter to the getTalks service 
   - remove nulls from the results of getMyTalks to untimately stop error on client
   - check for errors before submiting the postTalk (talksService) or addTalk (displayTalksComponent)
-* TODO register component form logic
-* TODO login component form logic
+* TODO Make footer better, clean up layout of h1's and make sessions have more space
+* TODO Test ratings with more than one rating in the json data
+* TODO sort the rate talk button overflow
+* TODO add on change listener to the search form to replace submit button or Center it with CSS
+* DONE register component form logic
+* DONE login component form logic
 * DONE rating component form logic
   - make sure no nulls can be sent to the server
 
-* TODO Test ratings with more than one rating in the json data
-
-* TODO add error handlers to all http requests
-* TODO make add talk buttons unclickable after being added to my talks
-  - do this on the server adding a clicked state variable to the model
-* TODO make rate talk buttons disabled after user has reviewed a talk
+* DONE add error handlers to all http requests
+* DONE make rate talk buttons disabled after user has reviewed a talk
 * DONE redirect to login when non member tries to rate talk
   do this with checking if they are logged in and useing the redirect
   and passing parameters on the query
-* TODO add a display of the sessions A, B and C to the dashboard
+* DONE add a display of the sessions A, B and C to the dashboard
 
-* TODO sort the rate talk button overflow
-* TODO styling
+* DONE styling
   - [X] add a navbar
-  - [ ] add a loading animations
-  - [ ] footer
-  - [ ] main theme icon for all pages
-  - [ ] set up an onChange listener to run the jquery scripts for the card
-        dropdown menus.
-* TODO add on change listener to the search form to replace submit button
+  - [X] main theme icon for all pages
+
+- EXTRAS
+* TODO redirect to dash on register with welcome message
+* TODO make rate talk disaper completely after user has rated it
+* TODO make add talk buttons unclickable after being added to my talks
+  - do this on the server adding a clicked state variable to the model
 * DONE Time logic
   - add a string format of a date and time for a startTime and endTime
     on the server so date objects can be created easily clientside.

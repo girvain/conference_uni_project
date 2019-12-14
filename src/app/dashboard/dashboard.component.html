@@ -1,5 +1,6 @@
 <app-nav [activeRoute]="'dash'"></app-nav>
 <app-heading-content></app-heading-content>
+
 <div class="ui centered container">
   <div class="ui centered fluid card">
     <div class="content">
@@ -20,6 +21,19 @@
     (talksChange)="onTalksChange($event)"
   ></app-talk-search>
 </div>
+
+<div class="ui center container" id="main-heading">
+  <h1 class="ui centered header">Talks</h1>
+  <div class="ui divider"></div>
+</div>
+
 <div>
   <app-display-talks [talks]="talks" [isMyTalks]="false"></app-display-talks>
 </div>
+
+<div class="ui center container">
+  <h1 class="ui centered header">Sessions</h1>
+  <div class="ui divider"></div>
+</div>
+<app-display-sessions></app-display-sessions>
+<app-footer></app-footer>

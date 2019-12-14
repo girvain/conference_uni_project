@@ -18,7 +18,11 @@ export class MyTalksComponent implements OnInit {
   getMyTalks(): void {
         this.talksService.getMyTalks()
       .subscribe(result => {
-        this.talks = result;
+        // Check that the result isn't null as a new user won't have any talks to GET
+        // which will be a null
+        if (result !== null) {
+          this.talks = result;
+        }
         console.log(result);
         console.log(this.talks);
       });

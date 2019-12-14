@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { TalksService } from '../talks.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
@@ -12,11 +12,23 @@ import { AuthService } from '../auth/auth.service';
 })
 export class RegisterComponent implements OnInit {
     loginForm = new FormGroup({
-        name: new FormControl(''),
-        email: new FormControl(''),
-        password: new FormControl(''),
-        password2: new FormControl(''),
+        name: new FormControl('', [
+          Validators.required,
+        ]),
+        email: new FormControl('', [
+          Validators.required,
+          Validators.email,
+        ]),
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(7),
+        ]),
+        password2: new FormControl('', [
+          Validators.required,
+          Validators.minLength(7),
+        ]),
     });
+  private errorMsg: { title: string; dsc: string };
 
 
     constructor(
@@ -28,26 +40,47 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
     }
 
-    onSubmit(): void {
-        this.talksService.register(this.loginForm.value)
-            .subscribe(result => {
-                this.router.navigate(['/login']);
-            });
-    }
-
     // onSubmit(): void {
-    //     this.authService.login(this.loginForm.value).subscribe(() => {
-
-    //         if (this.authService.isLoggedIn) {
-    //             // Get the redirect URL from our auth service
-    //             // If no redirect has been set, use the default
-    //             let redirect = this.authService.redirectUrl ? this.router.parseUrl(this.authService.redirectUrl) : '/dashboard';
-
-    //             // Redirect the user
-    //             this.router.navigateByUrl(redirect);
-    //         }
-    //     });
+    //     this.talksService.register(this.loginForm.value)
+    //         .subscribe(result => {
+    //             this.router.navigate(['/login']);
+    //         });
     // }
+
+  get name() {
+    return this.loginForm.get('name');
+  }
+
+  get email() {
+    return this.loginForm.get('email');
+  }
+  get password() {
+    return this.loginForm.get('password');
+  }
+
+  get password2() {
+    return this.loginForm.get('password2');
+  }
+
+
+  onSubmit(): void {
+    this.talksService.register(this.loginForm.value).subscribe({
+      next: x => {
+        this.router.navigate(['/login']);
+      },
+      error: err => {
+        console.log(err);
+        this.errorMsg = {
+          title: err.statusText,
+          dsc: err.error.errors[0].msg,
+        };
+      },
+      complete: () => {
+        console.log('complete');
+      }
+    });
+  }
+
 
 
 }

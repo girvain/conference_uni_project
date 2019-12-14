@@ -1,20 +1,27 @@
 <div class="ui container">
   <div class="ui middle aligned center aligned grid">
     <div class="column">
-      <h2 class="ui image header">
-        <!-- <img src="assets/images/logo.png" class="image" /> -->
+      <div class="ui small image">
+         <img src="../../assets/images/association-152746_1280.png" />
         <div class="content">
-          Log-in to your account
+          <h2>Login</h2>
         </div>
-      </h2>
+      </div>
+
 
       <div class="ui error message" *ngIf="errorMsg == 500">
         <div class="header">Action Forbidden</div>
-        <p>You must be a registered and logged in user to access this feature. Please Login or click the sign up to register.</p>
+        <p>You must be a registered and logged in user to access this feature. Please Login or click the sign up to
+          register.</p>
+      </div>
+
+      <div class="ui error message" *ngIf="errorMsg2 && errorMsg2 != 500">
+        <div class="header" *ngIf="errorMsg2.title">{{errorMsg2.title}}</div>
+        <p *ngIf="errorMsg2.dsc">{{errorMsg2.dsc}}</p>
       </div>
 
       <form
-        class="ui large form"
+        class="ui large form warning"
         [formGroup]="loginForm"
         (ngSubmit)="onSubmit()"
       >
@@ -27,7 +34,12 @@
                 type="text"
                 name="email"
                 placeholder="E-mail address"
+                required
               />
+            </div>
+            <div class="ui warning message" *ngIf="email.invalid && (email.dirty || email.touched)">
+              <div class="header">Warning!</div>
+              <p>A valid email is required</p>
             </div>
           </div>
           <div class="field">
@@ -38,10 +50,12 @@
                 type="password"
                 name="password"
                 placeholder="Password"
+                required
               />
             </div>
           </div>
-          <button class="ui fluid primary submit button" type="submit">
+
+          <button class="ui fluid primary submit button" type="submit" [disabled]="!loginForm.valid">
             Login
           </button>
           <div class="six wide"></div>

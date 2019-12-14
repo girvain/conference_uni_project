@@ -32,6 +32,8 @@ import { HeadingContentComponent } from './heading-content/heading-content.compo
 import { MyTalksComponent } from './my-talks/my-talks.component';
 import { LoginContainerComponent } from './login-container/login-container.component';
 import { RegisterComponent } from './register/register.component';
+import { FooterComponent } from './footer/footer.component';
+import { DisplaySessionsComponent } from './display-sessions/display-sessions.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { RegisterComponent } from './register/register.component';
     MyTalksComponent,
     LoginContainerComponent,
     RegisterComponent,
+    FooterComponent,
+    DisplaySessionsComponent,
   ],
   imports: [
     BrowserModule,
