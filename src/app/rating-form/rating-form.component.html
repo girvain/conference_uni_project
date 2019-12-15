@@ -15,7 +15,7 @@
     </div>
 
   </div>
-        <button class="ui fluid button" type="submit" [disabled]="!ratingForm.valid || isSubmited">
+        <button class="ui fluid button" type="submit" [disabled]="!ratingForm.valid || isSubmited" *ngIf="!isSubmited">
       Rate Talk
     </button>
 </form>

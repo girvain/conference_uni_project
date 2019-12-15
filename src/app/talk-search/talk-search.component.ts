@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output, Input, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import {Component, EventEmitter, Output, Input, OnInit} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-talk-search',
@@ -13,28 +13,21 @@ export class TalkSearchComponent implements OnInit {
     tag: new FormControl(''),
   });
 
-    @Output() talksChange: EventEmitter<any>;
-    @Input() talks;
-    @Input() speakers: string[];
-    @Input() selectOptions: object;
-    sessions: string[];
-    tags: string[];
+  @Output() talksChange: EventEmitter<any>;
+  @Input() selectOptions: object;
+  sessions: string[];
+  tags: string[];
 
-    constructor() {
-      this.talksChange = new EventEmitter();
-    }
+  constructor() {
+    this.talksChange = new EventEmitter();
+  }
 
   ngOnInit() {
   }
 
-    setSpeakers(): void {
-        //this.speakers = this.talks.map(talk => talk.speakers = 'GAvin Ross');
-        console.log(this.talks);
-    }
-
-    onSubmit(): void {
-        this.talksChange.emit(this.searchForm.value);
-        console.log(this.searchForm.value);
-        console.log(this.talks);
+  onSubmit(): void {
+    this.talksChange.emit(this.searchForm.value);
+    console.log(this.searchForm.value);
+    // console.log(this.talks);
   }
 }

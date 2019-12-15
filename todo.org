@@ -4,8 +4,8 @@
   - check for errors before submiting the postTalk (talksService) or addTalk (displayTalksComponent)
 * DONE Make footer better, clean up layout of h1's and make sessions have more space
 * TODO Test ratings with more than one rating in the json data
-* TODO sort the rate talk button overflow
-* TODO add on change listener to the search form to replace submit button or Center it with CSS
+* DONE sort the rate talk button overflow
+* DONE add on change listener to the search form to replace submit button or Center it with CSS
 * DONE register component form logic
 * DONE login component form logic
 * DONE rating component form logic

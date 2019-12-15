@@ -29,7 +29,7 @@ describe('DisplayTalksComponent', () => {
   //   expect(component).toBeTruthy();
   // });
 
-  it('checkTalkTimes', () => {
-        expect(component.checkTalkTimes).Any();
-    });
+  // it('checkTalkTimes', () => {
+  //       expect(component.checkTalkTimes).Any();
+  //   });
 });
