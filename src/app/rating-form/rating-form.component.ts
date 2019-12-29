@@ -18,12 +18,12 @@ export class RatingFormComponent implements OnInit {
           Validators.minLength(1),
         ]),
     });
-  private isSubmited: boolean;
+  public isSubmited: boolean;
 
 
     constructor(
         private talksService: TalksService,
-        private authService: AuthService,
+        public authService: AuthService,
         private router: Router
     ) { }
 

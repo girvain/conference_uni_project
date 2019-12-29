@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
           Validators.minLength(7),
         ]),
     });
-  private errorMsg: { title: string; dsc: string };
+  public errorMsg: { title: string; dsc: string };
 
 
     constructor(

@@ -20,14 +20,14 @@ export class LoginComponent implements OnInit {
       Validators.required,
     ]),
   });
-  private errorMsg: string;
-  private errorMsg2: { title: string; dsc: string };
+  public errorMsg: string;
+  public errorMsg2: { title: string; dsc: string };
 
 
   constructor(
     private talksService: TalksService,
     private router: Router,
-    private authService: AuthService,
+    public authService: AuthService,
     private route: ActivatedRoute,
   ) {
   }
