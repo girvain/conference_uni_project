@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class TalksService {
 
-  private talksUrl = 'http://localhost:3000';
+  private talksUrl = 'https://conferenceserver.herokuapp.com'
   httpOptions = {
       headers: new HttpHeaders({'Content-Type': 'application/json'}),
     withCredentials: true,
